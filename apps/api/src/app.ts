@@ -3,6 +3,7 @@ import type { SessionStore } from './auth/sessions.js';
 import type { GroupRepository } from './groups/repository.js';
 import { INTERNAL_DETAIL, sendProblem } from './http/problem.js';
 import type { PlaceRepository } from './places/repository.js';
+import { placesRouter } from './places/routes.js';
 import type { UserPlaceRepository } from './users/user-places.js';
 
 export interface Logger {
@@ -29,6 +30,16 @@ export function createApp(deps: AppDeps): Express {
   app.set('query parser', false);
 
   const v1 = express.Router();
+  v1.use(
+    placesRouter({
+      places: deps.places,
+      groups: deps.groups,
+      userPlaces: deps.userPlaces,
+      sessions: deps.sessions,
+      cursorSecret: deps.cursorSecret,
+      now: deps.now ?? (() => new Date()),
+    }),
+  );
   app.use('/v1', v1);
 
   app.use((_req, res) => {
