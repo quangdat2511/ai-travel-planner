@@ -1,0 +1,5 @@
+# Store and check out every text file with LF endings, also on Windows.
+# Without this, core.autocrlf=true gives CRLF files and `npm run format:check` fails locally.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

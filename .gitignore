@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+
+# Secrets stay on the machine. Only the example file is committed.
+.env
+.env.*
+!.env.example
+
+# Personal assistant settings. The shared ones are in .claude/settings.json.
+.claude/settings.local.json

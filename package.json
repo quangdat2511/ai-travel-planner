@@ -1,0 +1,30 @@
+{
+  "name": "ai-travel-planner",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AI Travel Planner: a weekend schedule and spending plan for a group in Ho Chi Minh City (CSC13114, 23KTPM1)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12 <23"
+  },
+  "workspaces": [
+    "apps/api"
+  ],
+  "scripts": {
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck -w @atp/api",
+    "test": "npm run test -w @atp/api",
+    "test:contract": "npm run test:contract -w @atp/api",
+    "check": "npm run lint && npm run format:check && npm run typecheck && npm run test && npm run test:contract",
+    "dev": "npm run dev -w @atp/api"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1",
+    "typescript-eslint": "^8.73.0"
+  }
+}
