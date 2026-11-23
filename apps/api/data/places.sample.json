@@ -1,0 +1,112 @@
+[
+  {
+    "id": "cho-dem-vi-du",
+    "name": "Chợ Đêm Ví Dụ",
+    "type": "market",
+    "district": "quan-1",
+    "address": "12 Đường Ví Dụ, Phường Bến Thành, Quận 1",
+    "location": { "lat": 10.772542, "lng": 106.698021 },
+    "setting": "outdoor",
+    "priceLevel": 2,
+    "ticketPriceVnd": 0,
+    "openingHours": {
+      "mon": [],
+      "tue": [{ "open": "17:00", "close": "23:00" }],
+      "wed": [{ "open": "17:00", "close": "23:00" }],
+      "thu": [{ "open": "17:00", "close": "23:00" }],
+      "fri": [{ "open": "17:00", "close": "01:00" }],
+      "sat": [
+        { "open": "09:00", "close": "11:30" },
+        { "open": "17:00", "close": "01:00" }
+      ],
+      "sun": [{ "open": "17:00", "close": "23:00" }]
+    },
+    "menuItemCount": 6,
+    "photo": null,
+    "source": { "name": "Sample data, not checked", "url": null, "checkedOn": "2026-11-23" }
+  },
+  {
+    "id": "bao-tang-mau",
+    "name": "Bảo Tàng Mẫu",
+    "type": "museum",
+    "district": "quan-3",
+    "address": "1 Đường Mẫu, Phường Võ Thị Sáu, Quận 3",
+    "location": { "lat": 10.7794, "lng": 106.6921 },
+    "setting": "indoor",
+    "priceLevel": 1,
+    "ticketPriceVnd": 40000,
+    "openingHours": {
+      "mon": [],
+      "tue": [{ "open": "08:00", "close": "17:00" }],
+      "wed": [{ "open": "08:00", "close": "17:00" }],
+      "thu": [{ "open": "08:00", "close": "17:00" }],
+      "fri": [{ "open": "08:00", "close": "17:00" }],
+      "sat": [{ "open": "08:00", "close": "17:00" }],
+      "sun": [{ "open": "08:00", "close": "17:00" }]
+    },
+    "menuItemCount": 3,
+    "photo": null,
+    "source": { "name": "Sample data, not checked", "url": null, "checkedOn": "2026-11-23" }
+  },
+  {
+    "id": "ca-phe-mau",
+    "name": "Cà Phê Mẫu",
+    "type": "cafe",
+    "district": "quan-1",
+    "address": "5 Đường Mẫu, Phường Đa Kao, Quận 1",
+    "location": { "lat": 10.7883, "lng": 106.6995 },
+    "setting": "indoor",
+    "priceLevel": 1,
+    "ticketPriceVnd": 0,
+    "openingHours": {
+      "mon": [{ "open": "07:00", "close": "22:00" }],
+      "tue": [{ "open": "07:00", "close": "22:00" }],
+      "wed": [{ "open": "07:00", "close": "22:00" }],
+      "thu": [{ "open": "07:00", "close": "22:00" }],
+      "fri": [{ "open": "07:00", "close": "22:00" }],
+      "sat": [{ "open": "07:00", "close": "22:00" }],
+      "sun": [{ "open": "07:00", "close": "22:00" }]
+    },
+    "menuItemCount": 8,
+    "photo": null,
+    "source": { "name": "Sample data, not checked", "url": null, "checkedOn": "2026-11-23" }
+  },
+  {
+    "id": "cong-vien-mau",
+    "name": "Công Viên Mẫu",
+    "type": "park",
+    "district": "quan-3",
+    "address": "2 Đường Mẫu, Phường Bàn Cờ, Quận 3",
+    "location": { "lat": 10.7745, "lng": 106.6918 },
+    "setting": "outdoor",
+    "priceLevel": 1,
+    "ticketPriceVnd": 0,
+    "openingHours": {
+      "mon": [{ "open": "05:00", "close": "22:00" }],
+      "tue": [{ "open": "05:00", "close": "22:00" }],
+      "wed": [{ "open": "05:00", "close": "22:00" }],
+      "thu": [{ "open": "05:00", "close": "22:00" }],
+      "fri": [{ "open": "05:00", "close": "22:00" }],
+      "sat": [{ "open": "05:00", "close": "22:00" }],
+      "sun": [{ "open": "05:00", "close": "22:00" }]
+    },
+    "menuItemCount": 3,
+    "photo": null,
+    "source": { "name": "Sample data, not checked", "url": null, "checkedOn": "2026-11-23" }
+  },
+  {
+    "id": "quan-moi-mau",
+    "name": "Quán Mới Mẫu",
+    "type": "food",
+    "district": "quan-10",
+    "address": "9 Đường Mẫu, Phường Diên Hồng, Quận 10",
+    "location": { "lat": 10.7676, "lng": 106.6664 },
+    "setting": "indoor",
+    "priceLevel": 2,
+    "ticketPriceVnd": 0,
+    "openingHours": null,
+    "menuItemCount": 0,
+    "photo": null,
+    "source": { "name": "Sample data, not checked", "url": null, "checkedOn": "2026-11-23" }
+  }
+]

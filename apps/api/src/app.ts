@@ -1,15 +1,27 @@
 import express, { type ErrorRequestHandler, type Express } from 'express';
+import type { SessionStore } from './auth/sessions.js';
+import type { GroupRepository } from './groups/repository.js';
 import { INTERNAL_DETAIL, sendProblem } from './http/problem.js';
+import type { PlaceRepository } from './places/repository.js';
+import { placesRouter } from './places/routes.js';
+import type { UserPlaceRepository } from './users/user-places.js';
 
 export interface Logger {
   error(message: string, error: unknown): void;
 }
 
 export interface AppDeps {
+  places: PlaceRepository;
+  groups: GroupRepository;
+  userPlaces: UserPlaceRepository;
+  sessions: SessionStore;
+  /** Signs paging cursors. At least 32 characters. */
+  cursorSecret: string;
+  now?: () => Date;
   logger?: Logger;
 }
 
-export function createApp(deps: AppDeps = {}): Express {
+export function createApp(deps: AppDeps): Express {
   const logger = deps.logger ?? console;
   const app = express();
   app.disable('x-powered-by');
@@ -18,6 +30,16 @@ export function createApp(deps: AppDeps = {}): Express {
   app.set('query parser', false);
 
   const v1 = express.Router();
+  v1.use(
+    placesRouter({
+      places: deps.places,
+      groups: deps.groups,
+      userPlaces: deps.userPlaces,
+      sessions: deps.sessions,
+      cursorSecret: deps.cursorSecret,
+      now: deps.now ?? (() => new Date()),
+    }),
+  );
   app.use('/v1', v1);
 
   app.use((_req, res) => {
