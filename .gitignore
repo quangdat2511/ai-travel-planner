@@ -11,3 +11,4 @@ coverage/
 
 # Personal assistant settings. The shared ones are in .claude/settings.json.
 .claude/settings.local.json
+.claude/launch.json

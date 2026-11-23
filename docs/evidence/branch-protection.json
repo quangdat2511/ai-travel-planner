@@ -1,0 +1,21 @@
+{
+  "allow_deletions": false,
+  "allow_force_pushes": false,
+  "enforce_admins": true,
+  "required_conversation_resolution": true,
+  "required_pull_request_reviews": {
+    "dismiss_stale_reviews": true,
+    "required_approving_review_count": 0
+  },
+  "required_status_checks": {
+    "checks": [
+      { "app_id": 15368, "context": "lint" },
+      { "app_id": 15368, "context": "format:check" },
+      { "app_id": 15368, "context": "typecheck" },
+      { "app_id": 15368, "context": "test" },
+      { "app_id": 15368, "context": "test:contract" },
+      { "app_id": 15368, "context": "secrets" }
+    ],
+    "strict": true
+  }
+}
