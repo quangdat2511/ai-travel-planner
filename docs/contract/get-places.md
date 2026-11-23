@@ -269,9 +269,10 @@ A `HEAD` request gets the same status and headers as a `GET` request, with no bo
 - A walk is the first page and every page that follows it through `nextCursor`.
 - A cursor is opaque and signed by the server. The client sends it back unchanged, with the same
   filters as the first page: the same `type`, `district`, `priceLevel`, `q`, `openAt`,
-  `excludeVisited`, `groupId` and `status`. The order of values in a list does not matter. `q` is
-  compared after the spaces at both ends are removed, with case and accents ignored. `limit` can
-  change from page to page.
+  `excludeVisited`, `groupId` and `status`. A parameter that is left out counts as its default, so
+  `status=checked` and no `status` are the same filter. The order of values in a list does not
+  matter. `q` is compared after the spaces at both ends are removed, with case and accents ignored.
+  `limit` can change from page to page.
 - A cursor is valid for 24 hours after the first page of its walk. After that, it is
   `invalid-cursor`, and the client starts again from the first page.
 - With `openAt=now`, every page of one walk uses the instant of the first page. So a place does not
