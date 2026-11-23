@@ -112,9 +112,10 @@ const PARSERS = new Map<string, Parser>([
   [
     'limit',
     (raw, query) => {
-      const value = /^[1-9]\d{0,2}$/.test(raw) ? Number(raw) : NaN;
-      if (!(value <= MAX_LIMIT)) return `must be an integer from 1 to ${MAX_LIMIT}`;
-      query.limit = value;
+      // A client that asks for too many places gets the most we serve, not an error.
+      const value = /^[1-9]\d*$/.test(raw) ? Number(raw) : NaN;
+      if (Number.isNaN(value)) return `must be an integer from 1 to ${MAX_LIMIT}`;
+      query.limit = Math.min(value, MAX_LIMIT);
       return undefined;
     },
   ],
